@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Modified Hangman</title>
+</head>
+<body>
+    <h1>Hangman!</h1>
+    <script>
+        // Create an array of words
+      var words = [
+    "steak",
+    "pizza",
+    "bread",
+    "butter",
+    "fries",
+    "dragon",
+    "cake",
+    "banana",
+    "cheese",
+    "sauce"
+];
+
+
+    
+    var word = words[Math.floor(Math.random() * words.length)];
+
+
+    var answerArray = [];
+
+    for (var i = 0; i < word.length; i++) {
+        answerArray[i] = "_";
+    }
+
+    var remainingLetters = word.length;
+
+    var remainingGuesses = 10;
+
+    while (remainingLetters > 0 && remainingGuesses > 0) {
+
+        alert(
+            answerArray.join(" ") +
+            "\n\nGuesses remaining: " +
+            remainingGuesses
+        );
+
+
+        var guess = prompt(
+            "Guess a letter, or click Cancel to stop playing."
+        );
+
+        if (guess === null) {
+            break;
+
+        } else if (guess.length !== 1) {
+            alert("Please enter a single letter.");
+
+        } else {
+e
+            guess = guess.toLowerCase();
+
+            remainingGuesses--;
+
+    
+            for (var j = 0; j < word.length; j++) {
+
+                if (word[j] === guess && answerArray[j] === "_") {
+
+                    answerArray[j] = guess;
+
+                    remainingLetters--;
+                }
+            }
+        }
+    }
+
+    // Show the final answer
+    alert(answerArray.join(" "));
+
+    // Check whether the player won or lost
+    if (remainingLetters === 0) {
+        alert("Good job! The answer was " + word);
+    } else if (remainingGuesses === 0) {
+        alert("Game over! The answer was " + word);
+    } else {
+        alert("You stopped playing. The answer was " + word);
+    }
+
+
+    </script>
+</body>
+</html>
