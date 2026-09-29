@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Hangman</title>
+</head>
+<body>
+    <script>
+var pickWord = function () {
+    var words = [
+     "steak",
+    "pizza",
+    "bread",
+    "butter",
+    "fries",
+    "dragon",
+    "cake",
+    "banana",
+    "cheese",
+    "sauce"
+    ];
+
+    var word = words[Math.floor(Math.random() * words.length)];
+
+    return word;
+};
+
+var setupAnswerArray = function (word) {
+    var answerArray = [];
+
+    for (var i = 0; i < word.length; i++) {
+        answerArray[i] = "_";
+    }
+
+    return answerArray;
+};
+
+var showPlayerProgress = function (answerArray) {
+    alert(answerArray.join(" "));
+};
+
+var getGuess = function () {
+    return prompt("Guess a letter, or click Cancel to stop playing.");
+};
+
+var updateGameState = function (guess, word, answerArray) {
+    var correctGuesses = 0;
+
+    for (var j = 0; j < word.length; j++) {
+
+        if (word[j] === guess && answerArray[j] === "_") {
+            answerArray[j] = guess;
+            correctGuesses++;
+        }
+    }
+
+    return correctGuesses;
+};
+
+var showAnswerAndCongratulatePlayer = function (answerArray) {
+    alert(answerArray.join(" "));
+    alert("Good job!");
+};
+
+
+// Start the game
+var word = pickWord();
+
+var answerArray = setupAnswerArray(word);
+
+var remainingLetters = word.length;
+
+
+// Game loop
+while (remainingLetters > 0) {
+
+    showPlayerProgress(answerArray);
+
+    var guess = getGuess();
+
+    if (guess === null) {
+        break;
+
+    } else if (guess.length !== 1) {
+        alert("Please enter a single letter.");
+
+    } else {
+
+        guess = guess.toLowerCase();
+
+        var correctGuesses = updateGameState(
+            guess,
+            word,
+            answerArray
+        );
+
+        remainingLetters -= correctGuesses;
+    }
+}
+
+
+// Finish the game
+showAnswerAndCongratulatePlayer(answerArray);
+
+
+    </script>
+</body>
+</html>
