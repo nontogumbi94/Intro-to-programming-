@@ -1,0 +1,15 @@
+body{
+    background-color: beige;
+}
+h1{
+    color: blueviolet;
+}
+#myName{
+    color:brown
+}
+#changeList{
+    width: 150px;
+    color: navy ;
+    background-color: aqua;
+    border-radius: 20px;
+}
