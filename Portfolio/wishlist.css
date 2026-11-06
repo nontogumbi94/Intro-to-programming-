@@ -1,0 +1,56 @@
+h1{
+   
+    color: #cd2cc5;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+
+#listPage.print {
+    background-color:#e3b6f0;
+    padding: 20px;
+    font-family: cursive;
+}
+
+#listPage.print ul {
+    margin: 10px 0px;
+    padding: 0px;
+    border-left: 4px double rgb(165 15 207);
+    width: 400px;
+}
+
+#listPage.print li {
+    list-style-type: none;
+    margin: 0px -20px;
+    padding-left: 26px;
+    border-bottom: 1px solid rgb(165 15 207);;
+    line-height: 36px;
+    font-size: 24px;
+    font-family: cursive;
+}
+
+#printable {
+    background-color: blueviolet;
+    color: #2e0f2d;
+    width: 110px;
+    padding: 6px;
+    border-radius: 15px;
+    border: none;
+}
+
+#addIt {
+    background-color: blueviolet;
+    width: 101px;
+    padding: 6px;
+    border-radius: 15px;
+    border: none;
+    color: #2e0f2d;
+}
+
+#iWant {
+    background-color: rgb(227 182 240);
+    border-radius: 20px;
+    border: 2px solid #ca7cea;
+    height: 30px;
+    padding: 2px 9px;
+}
