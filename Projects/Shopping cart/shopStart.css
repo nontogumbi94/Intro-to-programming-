@@ -1,0 +1,28 @@
+table{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+th{
+    background-color: cadetblue;
+    color: blanchedalmond;
+}
+th , td{
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+    font-family: cursive
+}
+tr:nth-child(even){
+    background-color: #ddd;
+
+}
+button{
+    color: blanchedalmond;
+    border-radius: 20px;
+    padding: 5px 20px;
+    border: none;
+}
+.checkout{
+    background-color: cadetblue;
+}
